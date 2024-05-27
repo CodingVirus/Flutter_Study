@@ -1,13 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rsp_app/game/enum.dart';
 
 class InputCard extends StatelessWidget {
   final VoidCallback? callback;
   final Widget child;
 
   const InputCard({
-    required this.callback,
+    this.callback,
     required this.child,
     super.key,
   });
