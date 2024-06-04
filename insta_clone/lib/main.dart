@@ -4,16 +4,24 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
               Colors.deepPurple,
               Colors.lightGreen,
             ],
+            begin: Alignment.topLeft,
+            end: Alignment.center,
           ),
         ),
         child: const Center(
-          child: Text('Hi'),
+          child: Text(
+            'hi',
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 28,
+            ),
+          ),
         ),
       ),
     ),
