@@ -1,29 +1,15 @@
 import 'package:flutter/material.dart';
+import 'gradient_container.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Colors.deepPurple,
-              Colors.lightGreen,
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.center,
-          ),
-        ),
-        child: const Center(
-          child: Text(
-            'hi',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 28,
-            ),
-          ),
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: GradientContainer(
+          Colors.purple,
+          Colors.deepPurple,
         ),
       ),
     ),
-  ));
+  );
 }
