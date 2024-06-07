@@ -1,16 +1,7 @@
-# rsp_app
+# 가위, 바위, 보 
 
-A new Flutter project.
+컴퓨터와 가위, 바위, 보를 하는 게임 앱
 
-## Getting Started
+## 시연 영상
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![가위바위보](https://github.com/CodingVirus/Flutter_Study/assets/93506475/bebe92e3-fc3f-4b79-bbab-df7dc9240cc2)
