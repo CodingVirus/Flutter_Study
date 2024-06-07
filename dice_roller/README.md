@@ -1,16 +1,7 @@
-# insta_clone
+# 주사위 굴리기 앱
 
-A new Flutter project.
+주사위를 굴리는 앱
 
-## Getting Started
+## 시연 영상
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screen_recording_20240607_171523](https://github.com/CodingVirus/Flutter_Study/assets/93506475/1627e1a7-5196-4910-8ef4-858431d1b366)
