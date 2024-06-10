@@ -31,9 +31,25 @@ class _ExpensesState extends State<Expenses> {
         category: Category.work),
   ];
 
+  void _openAddExpenseOverlay() {
+    showModalBottomSheet(
+      context: context,
+      builder: (ctx) => Text('Modal Bottom Sheet'),
+    );
+  }
+
   @override
   Widget build(context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('플러터 비용 계산 앱'),
+        actions: [
+          IconButton(
+            onPressed: _openAddExpenseOverlay,
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           const Text('목록'),
