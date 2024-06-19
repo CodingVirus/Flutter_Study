@@ -1,12 +1,13 @@
-# expense_tracker_app
+# 지출 기록 앱
 
-A new Flutter project.
+내가 사용한 지출을 기록하여 차트로 보여주는 앱.
 
-## Getting Started
+## 시연 영상 및 설명
 
-This project is a starting point for a Flutter application.
+### 1.지출 추가 및 유효성 검사 체크
 
-A few resources to get you started if this is your first Flutter project:
+우측 상단에 + 버튼을 클릭하여 지출을 추가할 수 있도록 구현
+제목, 비용, 날짜중 하나라도 선택이 안되어 있으면 오류창이 나오도록 구현
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
