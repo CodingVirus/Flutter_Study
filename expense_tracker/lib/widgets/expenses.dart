@@ -77,7 +77,7 @@ class _ExpensesState extends State<Expenses> {
     return Scaffold(
       appBar: AppBar(
         //centerTitle: false,
-        title: const Text('플러터 비용 계산 앱'),
+        title: const Text('플러터 지출 기록 앱'),
         actions: [
           IconButton(
             onPressed: _openAddExpenseOverlay,
