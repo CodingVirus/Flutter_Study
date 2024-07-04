@@ -5,52 +5,52 @@ import '../models/meal.dart';
 const availableCategories = [
   Category(
     id: 'c1',
-    title: 'Italian',
+    title: '이탈리아',
     color: Colors.purple,
   ),
   Category(
     id: 'c2',
-    title: 'Quick & Easy',
+    title: '빠르고 쉬운',
     color: Colors.red,
   ),
   Category(
     id: 'c3',
-    title: 'Hamburgers',
+    title: '햄버거',
     color: Colors.orange,
   ),
   Category(
     id: 'c4',
-    title: 'German',
+    title: '독일',
     color: Colors.amber,
   ),
   Category(
     id: 'c5',
-    title: 'Light & Lovely',
+    title: '간단한',
     color: Colors.blue,
   ),
   Category(
     id: 'c6',
-    title: 'Exotic',
+    title: '이국적인',
     color: Colors.green,
   ),
   Category(
     id: 'c7',
-    title: 'Breakfast',
+    title: '아침',
     color: Colors.lightBlue,
   ),
   Category(
     id: 'c8',
-    title: 'Asian',
+    title: '아시아',
     color: Colors.lightGreen,
   ),
   Category(
     id: 'c9',
-    title: 'French',
+    title: '프랑스',
     color: Colors.pink,
   ),
   Category(
     id: 'c10',
-    title: 'Summer',
+    title: '여름',
     color: Colors.teal,
   ),
 ];
@@ -62,28 +62,28 @@ const dummyMeals = [
       'c1',
       'c2',
     ],
-    title: 'Spaghetti with Tomato Sauce',
+    title: '토마토 스파게티',
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
     imageUrl:
     'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
     duration: 20,
     ingredients: [
-      '4 Tomatoes',
-      '1 Tablespoon of Olive Oil',
-      '1 Onion',
-      '250g Spaghetti',
-      'Spices',
-      'Cheese (optional)'
+      '토마토 4개',
+      '올리브오일 1스푼',
+      '양파 1개',
+      '스파게티면 250g',
+      '향신료',
+      '치즈(선택)'
     ],
     steps: [
-      'Cut the tomatoes and the onion into small pieces.',
-      'Boil some water - add salt to it once it boils.',
-      'Put the spaghetti into the boiling water - they should be done in about 10 to 12 minutes.',
-      'In the meantime, heaten up some olive oil and add the cut onion.',
-      'After 2 minutes, add the tomato pieces, salt, pepper and your other spices.',
-      'The sauce will be done once the spaghetti are.',
-      'Feel free to add some cheese on top of the finished dish.'
+      '1. 토마토와 양파를 작은 조각으로 자릅니다.',
+      '2. 물이 끓어 오르면 소금을 넣어 주세요.',
+      '3. 스파게티 면을 끓는 물에 넣고 약 10~12분 동안 익혀 주세요.',
+      '4. 그 사이에 올리브 오일과 함께 다진 양파를 볶아 주세요.',
+      '5. 2분 후 손질된 토마토, 소금, 후추 및 기타 향신료를 추가해 주세요.',
+      '6. 스파게티 면이 다 익으면 완성된 소스하고 섞어 주세요.',
+      '7. 완성된 요리 위에 치즈를 추가해 보세요.'
     ],
     isGlutenFree: false,
     isVegan: true,
@@ -95,23 +95,23 @@ const dummyMeals = [
     categories: [
       'c2',
     ],
-    title: 'Toast Hawaii',
+    title: '하와이안 토스트',
     affordability: Affordability.affordable,
     complexity: Complexity.simple,
     imageUrl:
     'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
     duration: 10,
     ingredients: [
-      '1 Slice White Bread',
-      '1 Slice Ham',
-      '1 Slice Pineapple',
-      '1-2 Slices of Cheese',
-      'Butter'
+      '식빵 1조각',
+      '햄 1조각',
+      '파인애플 1조각',
+      '치즈 1-2조각',
+      '버터'
     ],
     steps: [
-      'Butter one side of the white bread',
-      'Layer ham, the pineapple and cheese on the white bread',
-      'Bake the toast for round about 10 minutes in the oven at 200°C'
+      '1. 식빵 한쪽에 버터를 발라 주세요',
+      '2. 식빵 위에 햄, 파인애플, 치즈를 얹어 주세요',
+      '3. 식빵을 200°C 오븐에서 10분 정도 구워 주세요'
     ],
     isGlutenFree: false,
     isVegan: false,
@@ -124,7 +124,7 @@ const dummyMeals = [
       'c2',
       'c3',
     ],
-    title: 'Classic Hamburger',
+    title: '클래식 햄버거',
     affordability: Affordability.pricey,
     complexity: Complexity.simple,
     imageUrl:
@@ -132,18 +132,18 @@ const dummyMeals = [
     duration: 45,
     ingredients: [
       '300g Cattle Hack',
-      '1 Tomato',
-      '1 Cucumber',
-      '1 Onion',
-      'Ketchup',
-      '2 Burger Buns'
+      '토마토 1개',
+      '오이 1개',
+      '양파 1개',
+      '케첩',
+      '햄버거 빵'
     ],
     steps: [
-      'Form 2 patties',
-      'Fry the patties for c. 4 minutes on each side',
-      'Quickly fry the buns for c. 1 minute on each side',
-      'Bruch buns with ketchup',
-      'Serve burger with tomato, cucumber and onion'
+      '패티 2개를 준비 해주세요.',
+      'c 동안 패티를 튀기세요. 각 면에 4분씩',
+      'c 동안 빵을 빨리 튀겨주세요. 각 면에 1분씩',
+      '케첩을 곁들인 브루크번',
+      '토마토, 오이, 양파를 곁들인 버거를 서빙하세요'
     ],
     isGlutenFree: false,
     isVegan: false,
