@@ -163,7 +163,7 @@ const dummyMeals = [
     duration: 60,
     ingredients: [
       '8 Veal Cutlets',
-      '4 Eggs',
+      '계란 4개',
       '200g Bread Crumbs',
       '100g Flour',
       '300ml Butter',
