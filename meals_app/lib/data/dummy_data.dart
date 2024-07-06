@@ -131,7 +131,7 @@ const dummyMeals = [
     'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
     duration: 45,
     ingredients: [
-      '300g Cattle Hack',
+      '소고기 패티 300g',
       '토마토 1개',
       '오이 1개',
       '양파 1개',
@@ -139,8 +139,8 @@ const dummyMeals = [
       '햄버거 빵'
     ],
     steps: [
-      '패티 2개를 준비 해주세요.',
-      'c 동안 패티를 튀기세요. 각 면에 4분씩',
+      '패티 2개를 준비해 주세요.',
+      '한 면당 4분씩 패티를 구워 주세요',
       'c 동안 빵을 빨리 튀겨주세요. 각 면에 1분씩',
       '케첩을 곁들인 브루크번',
       '토마토, 오이, 양파를 곁들인 버거를 서빙하세요'
@@ -377,27 +377,27 @@ const dummyMeals = [
       'c5',
       'c10',
     ],
-    title: 'Asparagus Salad with Cherry Tomatoes',
+    title: '체리 토마토를 곁들인 아스파라거스 샐러드',
     affordability: Affordability.luxurious,
     complexity: Complexity.simple,
     imageUrl:
     'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
     duration: 30,
     ingredients: [
-      'White and Green Asparagus',
-      '30g Pine Nuts',
-      '300g Cherry Tomatoes',
-      'Salad',
-      'Salt, Pepper and Olive Oil'
+      '화이트 아스파라거스, 그린 아스파라거스',
+      '잣 30g',
+      '체리 토마토 300g',
+      '채소들',
+      '소금, 후추, 올리브 오일'
     ],
     steps: [
-      'Wash, peel and cut the asparagus',
-      'Cook in salted water',
-      'Salt and pepper the asparagus',
-      'Roast the pine nuts',
-      'Halve the tomatoes',
-      'Mix with asparagus, salad and dressing',
-      'Serve with Baguette'
+      '아스파라거스를 씻어서 껍질을 벗기고 잘라 주세요.',
+      '소금물에 아스파라거스를 삶아 주세요.',
+      '아스파라거스에 소금과 후추를 뿌려 주세요.',
+      '잣을 구워 주세요.',
+      '토마토를 반으로 잘라 주세요.',
+      '아스파라거스와 샐러드, 드레싱을 섞어 주세요.',
+      '바게트와 함께 드세요.'
     ],
     isGlutenFree: true,
     isVegan: true,

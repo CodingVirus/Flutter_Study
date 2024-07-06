@@ -35,7 +35,7 @@ class MainDrawer extends StatelessWidget {
                 ),
                 const SizedBox(width: 18),
                 Text(
-                  'Cooking up!',
+                  '요리를 해보자!',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: Theme.of(context).colorScheme.primary,
                       ),
@@ -50,7 +50,7 @@ class MainDrawer extends StatelessWidget {
               color: Theme.of(context).colorScheme.onSurface,
             ),
             title: Text(
-              'Meals',
+              '메인 화면',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                     fontSize: 24,
@@ -67,7 +67,7 @@ class MainDrawer extends StatelessWidget {
               color: Theme.of(context).colorScheme.onSurface,
             ),
             title: Text(
-              'Filters',
+              '설정',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                 color: Theme.of(context).colorScheme.onSurface,
                 fontSize: 24,

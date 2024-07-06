@@ -32,7 +32,7 @@ class MealsScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            '아이구... 여기에는 아무것도 없어요!',
+            '비어 있어요!',
             style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onSurface,
                 ),

@@ -12,7 +12,7 @@ class FiltersScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Your Filters'),
+        title: const Text('설정'),
       ),
       body: Column(
         children: [
@@ -22,13 +22,13 @@ class FiltersScreen extends ConsumerWidget {
               ref.read(filtersProvider.notifier).setFilter(Filter.glutenFree, isChecked);
             },
             title: Text(
-              'Gluten-free',
+              '글루텐 프리',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
             ),
             subtitle: Text(
-              'Only include gluten-free meals.',
+              '글루텐 프리 음식만 표시가 됩니다.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
@@ -42,13 +42,13 @@ class FiltersScreen extends ConsumerWidget {
               ref.read(filtersProvider.notifier).setFilter(Filter.lactoseFree, isChecked);
             },
             title: Text(
-              'Lactose-free',
+              '유당 제거',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
             ),
             subtitle: Text(
-              'Only include Lactose-free meals.',
+              '유당 제거 음식만 표시가 됩니다.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
@@ -62,13 +62,13 @@ class FiltersScreen extends ConsumerWidget {
               ref.read(filtersProvider.notifier).setFilter(Filter.vegetarian, isChecked);
             },
             title: Text(
-              'Vegetarian',
+              '채식',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
             ),
             subtitle: Text(
-              'Only include Vegetarian meals.',
+              '채식만 표시가 됩니다.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
@@ -82,13 +82,13 @@ class FiltersScreen extends ConsumerWidget {
               ref.read(filtersProvider.notifier).setFilter(Filter.vegan, isChecked);
             },
             title: Text(
-              'Vegan',
+              '비건',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
             ),
             subtitle: Text(
-              'Only include Vegan meals.',
+              '비건 음식만 표시가 됩니다.',
               style: Theme.of(context).textTheme.labelMedium!.copyWith(
                     color: Theme.of(context).colorScheme.onSurface,
                   ),
