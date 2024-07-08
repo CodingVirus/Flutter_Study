@@ -165,11 +165,11 @@ const dummyMeals = [
       '8 Veal Cutlets',
       '계란 4개',
       '200g Bread Crumbs',
-      '100g Flour',
-      '300ml Butter',
+      '밀가루 100g',
+      '버터 300ml',
       '100g Vegetable Oil',
-      'Salt',
-      'Lemon Slices'
+      '소금',
+      '레몬 조각'
     ],
     steps: [
       'Tenderize the veal to about 2–4mm, and salt on both sides.',
