@@ -44,7 +44,21 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: Feed(),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: ListView.separated(
+          itemCount: 10,
+          itemBuilder: (context, idx) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 12),
+              child: Feed(),
+            );
+          },
+          separatorBuilder: (context, index) {
+            return Divider();
+          },
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: const Color(0xFFFF7E36),
@@ -92,5 +106,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
-
