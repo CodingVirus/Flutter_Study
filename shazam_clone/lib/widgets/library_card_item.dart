@@ -9,8 +9,15 @@ class LibraryCardItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Image.network(
-        imgUrl["imageUrl"].toString(),
+      child: Column(
+        children: [
+          Image.network(
+            imgUrl["imageUrl"].toString(),
+          ),
+          Text(imgUrl["title"].toString()),
+          Text(imgUrl["artist"].toString()),
+          Image.network("https://i.ibb.co/KG9m5QS/applemusic.png",),
+        ],
       ),
     );
   }
