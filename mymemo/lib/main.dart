@@ -62,7 +62,16 @@ class _HomePageState extends State<HomePage> {
                       leading: IconButton(
                         icon: const Icon(CupertinoIcons.pin),
                         onPressed: () {
-                          print('$memo : pin 클릭 됨');
+                          Memo value = memoService.memoList[index];
+                          if (value.isPined) {
+                            value.isPined = false;
+                            memoService.memoList.add(value);
+                            memoService.memoList.removeAt(index);
+                          } else {
+                            value.isPined = true;
+                            memoService.memoList.removeAt(index);
+                            memoService.memoList.insert(0, value);
+                          }
                         },
                       ),
                       // 메모 내용 (최대 3줄까지만 보여주도록)

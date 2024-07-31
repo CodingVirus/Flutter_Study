@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'main.dart';
 
@@ -6,9 +7,11 @@ import 'main.dart';
 class Memo {
   Memo({
     required this.content,
+    this.isPined = false,
   });
 
   String content;
+  bool isPined;
 
   Map toJson() {
     return {'content': content};
