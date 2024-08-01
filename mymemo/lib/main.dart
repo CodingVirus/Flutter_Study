@@ -60,18 +60,11 @@ class _HomePageState extends State<HomePage> {
                     return ListTile(
                       // 메모 고정 아이콘
                       leading: IconButton(
-                        icon: const Icon(CupertinoIcons.pin),
+                        icon: memoList[index].isPined
+                            ? const Icon(CupertinoIcons.pin_fill)
+                            : const Icon(CupertinoIcons.pin),
                         onPressed: () {
-                          Memo value = memoService.memoList[index];
-                          if (value.isPined) {
-                            value.isPined = false;
-                            memoService.memoList.add(value);
-                            memoService.memoList.removeAt(index);
-                          } else {
-                            value.isPined = true;
-                            memoService.memoList.removeAt(index);
-                            memoService.memoList.insert(0, value);
-                          }
+                          memoService.pinMemo(index: index);
                         },
                       ),
                       // 메모 내용 (최대 3줄까지만 보여주도록)

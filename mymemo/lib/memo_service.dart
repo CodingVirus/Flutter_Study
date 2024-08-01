@@ -30,6 +30,20 @@ class MemoService extends ChangeNotifier {
 
   List<Memo> memoList = [];
 
+  pinMemo({required int index}) {
+    Memo value = memoList[index];
+    if (value.isPined) {
+      value.isPined = false;
+      memoList.add(value);
+      memoList.removeAt(index);
+    } else {
+      value.isPined = true;
+      memoList.removeAt(index);
+      memoList.insert(0, value);
+    }
+    notifyListeners();
+  }
+
   createMemo({required String content}) {
     Memo memo = Memo(content: content);
     memoList.add(memo);
