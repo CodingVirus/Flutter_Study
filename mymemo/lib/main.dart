@@ -73,6 +73,7 @@ class _HomePageState extends State<HomePage> {
                         maxLines: 3,
                         overflow: TextOverflow.ellipsis,
                       ),
+                      subtitle: Text(memo.dateTime),
                       onTap: () {
                         // 아이템 클릭시
                         Navigator.push(

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ffi';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'main.dart';
 
 // Memo 데이터의 형식을 정해줍니다. 추후 isPinned, updatedAt 등의 정보도 저장할 수 있습니다.
@@ -8,17 +9,22 @@ class Memo {
   Memo({
     required this.content,
     this.isPined = false,
+    this.dateTime = '',
   });
 
   String content;
   bool isPined;
+  String dateTime;
 
   Map toJson() {
-    return {'content': content};
+    return {'content': content, 'isPined': isPined, 'dateTime': dateTime};
   }
 
   factory Memo.fromJson(json) {
-    return Memo(content: json['content']);
+    return Memo(
+        content: json['content'],
+        isPined: json['isPined'],
+        dateTime: json['dateTime']);
   }
 }
 
@@ -42,6 +48,7 @@ class MemoService extends ChangeNotifier {
       memoList.insert(0, value);
     }
     notifyListeners();
+    saveMemoList();
   }
 
   createMemo({required String content}) {
@@ -53,7 +60,12 @@ class MemoService extends ChangeNotifier {
 
   updateMemo({required int index, required String content}) {
     Memo memo = memoList[index];
+    if (content == '') {
+      deleteMemo(index: index);
+      return;
+    }
     memo.content = content;
+    memo.dateTime = DateFormat('yy/mm/dd - HH:mm:ss').format(DateTime.now());
     notifyListeners();
     saveMemoList();
   }
@@ -86,4 +98,3 @@ class MemoService extends ChangeNotifier {
     memoList = memoJsonList.map((json) => Memo.fromJson(json)).toList();
   }
 }
-
