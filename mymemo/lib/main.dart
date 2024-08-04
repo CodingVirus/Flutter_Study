@@ -126,13 +126,28 @@ class DetailPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              onPressed: () {
+                if (memoService.memoList[index].content == '') {
+                  memoService.deleteMemo(index: index);
+                  Navigator.pop(context);
+                  return;
+                }
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.arrow_back),
+            );
+          },
+        ),
         actions: [
           IconButton(
             onPressed: () {
               // 삭제 버튼 클릭시
               showDeleteDialog(context, memoService);
             },
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
           )
         ],
       ),
