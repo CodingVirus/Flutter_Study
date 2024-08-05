@@ -133,9 +133,9 @@ class DetailPage extends StatelessWidget {
                 if (memoService.memoList[index].content == '') {
                   memoService.deleteMemo(index: index);
                   Navigator.pop(context);
-                  return;
+                } else {
+                  Navigator.pop(context);
                 }
-                Navigator.pop(context);
               },
               icon: const Icon(Icons.arrow_back),
             );
