@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'book.dart';
 import 'book_service.dart';
 
 void main() {
@@ -34,6 +35,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var bottomNavIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,29 +77,78 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        toolbarHeight: 80,
-        title: TextField(
-          onSubmitted: (value) {},
-          cursorColor: Colors.grey,
-          decoration: InputDecoration(
-            prefixIcon: Icon(Icons.search, color: Colors.grey),
-            hintText: "작품, 감독, 배우, 컬렉션, 유저 등",
-            border: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.white),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(color: Colors.grey),
-              borderRadius: BorderRadius.all(Radius.circular(10)),
+    return Consumer<BookService>(
+      builder: (context, bookService, child) {
+        return Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            toolbarHeight: 80,
+            title: TextField(
+              onSubmitted: (value) {
+                bookService.search(value);
+              },
+              cursorColor: Colors.grey,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.search, color: Colors.grey),
+                hintText: "작품, 감독, 배우, 컬렉션, 유저 등",
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.white),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(color: Colors.grey),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                ),
+              ),
             ),
           ),
-        ),
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: ListView.separated(
+              itemCount: bookService.bookList.length,
+              separatorBuilder: (context, index) {
+                return const Divider();
+              },
+              itemBuilder: (context, index) {
+                if (bookService.bookList.isEmpty) return const SizedBox();
+                Book book = bookService.bookList.elementAt(index);
+                return BookTile(book: book);
+              },
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class BookTile extends StatelessWidget {
+  const BookTile({
+    super.key,
+    required this.book,
+  });
+
+  final Book book;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      onTap: () {},
+      leading: Image.network(
+        book.thumbnail,
+        fit: BoxFit.fitHeight,
       ),
-      body: Center(
-        child: Text("검색"),
+      title: Text(
+        book.title,
+        style: const TextStyle(fontSize: 16),
+      ),
+      subtitle: Text(
+        book.subtitle,
+        style: const TextStyle(color: Colors.grey),
+      ),
+      trailing: IconButton(
+        onPressed: () {},
+        icon: const Icon(Icons.star_border),
       ),
     );
   }
@@ -108,7 +159,7 @@ class LikedBookPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Center(
         child: Text("좋아요"),
       ),
