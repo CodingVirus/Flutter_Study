@@ -132,6 +132,8 @@ class BookTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    BookService bookService = context.read<BookService>();
+
     return ListTile(
       onTap: () {},
       leading: Image.network(
@@ -147,8 +149,15 @@ class BookTile extends StatelessWidget {
         style: const TextStyle(color: Colors.grey),
       ),
       trailing: IconButton(
-        onPressed: () {},
-        icon: const Icon(Icons.star_border),
+        onPressed: () {
+          bookService.toggleLikeBook(book: book);
+        },
+        icon: bookService.likedBookList.map((book) => book.id).contains(book.id)
+            ? const Icon(
+                Icons.star,
+                color: Colors.amber,
+              )
+            : Icon(Icons.star_border),
       ),
     );
   }
@@ -159,10 +168,25 @@ class LikedBookPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("좋아요"),
-      ),
+    return Consumer<BookService>(
+      builder: (context, bookService, child) {
+        return Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            child: ListView.separated(
+              itemCount: bookService.likedBookList.length,
+              separatorBuilder: (context, index) {
+                return const Divider();
+              },
+              itemBuilder: (context, index) {
+                if (bookService.likedBookList.isEmpty) return const SizedBox();
+                Book book = bookService.likedBookList.elementAt(index);
+                return BookTile(book: book);
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }
