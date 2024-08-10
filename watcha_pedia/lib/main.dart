@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 import 'book.dart';
 import 'book_service.dart';
 
@@ -135,7 +136,16 @@ class BookTile extends StatelessWidget {
     BookService bookService = context.read<BookService>();
 
     return ListTile(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => WebViewPage(
+              url: book.previewLink.replaceFirst("http", "https"),
+            ),
+          ),
+        );
+      },
       leading: Image.network(
         book.thumbnail,
         fit: BoxFit.fitHeight,
@@ -187,6 +197,40 @@ class LikedBookPage extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+class WebViewPage extends StatefulWidget {
+  WebViewPage({super.key, required this.url});
+
+  final String url;
+
+  @override
+  State<WebViewPage> createState() => _WebViewPageState();
+}
+
+class _WebViewPageState extends State<WebViewPage> {
+  late WebViewController controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller = WebViewController()
+      ..setJavaScriptMode(JavaScriptMode.unrestricted)
+      ..loadRequest(Uri.parse(widget.url));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey,
+        title: Text(widget.url),
+      ),
+      body: WebViewWidget(
+        controller: controller,
+      ),
     );
   }
 }
